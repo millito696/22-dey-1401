@@ -12,7 +12,7 @@ function Navbar(props) {
   return (
     <div className="row navbar">
       <div>
-        <p>Products</p>
+        <p>Products : {props.products}</p>
       </div>
       <div className="row">
         <p>Order</p>
