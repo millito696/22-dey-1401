@@ -7,15 +7,28 @@ import Cart from './Cart';
 import Modal from './modal';
 import CartItem from './Cart.Item';
 import Checkout from './Checkout';
+import { useState } from 'react';
 
 function App() {
+  const [priceSort, setPriceSort] = useState('lowest');
+  const [sizeSort, setSizeSort] = useState('all');
+  const priceSortHandler = (sort) => {
+    setPriceSort(sort);
+    // console.log(`from App ${sort}`);
+  }
+  const SizeSortHandler = (sort) => {
+    setSizeSort(sort);
+    console.log(`from App ${sort}`);
+  }
+
+
   return (
     <>
       <Header></Header>
       <div className="main">
         <div className="products">
-          <Navbar />
-          <CardContainer />
+          <Navbar onPriceSortChange={priceSortHandler} onSizeSortChange={SizeSortHandler} />
+          <CardContainer priceSort={priceSort} sizeSort={sizeSort} />
         </div>
         <div className="cart-main">
           <Cart></Cart>
