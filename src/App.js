@@ -30,8 +30,8 @@ function App() {
     <>
       <Header></Header>
       <div className="main">
+        <Navbar className='navbar' onPriceSortChange={priceSortHandler} onSizeSortChange={SizeSortHandler} products={productsNumber} />
         <div className="products">
-          <Navbar onPriceSortChange={priceSortHandler} onSizeSortChange={SizeSortHandler} products={productsNumber} />
           <CardContainer priceSort={priceSort} sizeSort={sizeSort} products={products} />
         </div>
         <div className="cart-main">

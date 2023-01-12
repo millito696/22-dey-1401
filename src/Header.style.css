@@ -1,6 +1,7 @@
-
-.header{
+.header {
   background-color: #203040;
   color: antiquewhite;
   padding: 10px;
+  font-size: larger;
+  font-weight: bold;
 }
