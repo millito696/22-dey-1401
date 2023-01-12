@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-item {
+  width: 80%;
+}
+
+.cart-item img {
+  width: 25%;
+}
+
+.cart-item button {
+  padding: 10px;
+  margin: 0 10px;
+  border: none;
+
+  background-color: #555;
+  color: white;
+}

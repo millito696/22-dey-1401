@@ -1,0 +1,22 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  /* align-items: flex-start; */
+  justify-content: space-between;
+}
+
+.checkout input {
+  margin: 0 auto;
+  width: 90%;
+  height: 30px;
+}
+
+.checkout button {
+  width: 92%;
+  /* margin: 0 auto; */
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0c041;
+  border: none;
+}

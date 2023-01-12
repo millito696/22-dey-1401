@@ -5,11 +5,12 @@ import Navbar from './Navbar';
 import CardContainer from './Card.Container';
 import Cart from './Cart';
 import Modal from './modal';
+import CartItem from './Cart.Item';
+import Checkout from './Checkout';
 
 function App() {
   return (
     <>
-      <Modal />
       <Header></Header>
       <div className="main">
         <div className="products">
@@ -17,7 +18,7 @@ function App() {
           <CardContainer />
         </div>
         <div className="cart-main">
-          <Cart />
+          <Cart></Cart>
         </div>
       </div>
       <Footer></Footer>
