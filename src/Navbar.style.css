@@ -1,8 +1,15 @@
-.row{
+.row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0 10px;
   gap: 5px;
+}
+
+.navbar {
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 1px solid #999;
+  margin-bottom: 10px;
 }

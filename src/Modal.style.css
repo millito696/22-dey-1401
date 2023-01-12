@@ -1,0 +1,36 @@
+.modal {
+  position: absolute;
+  left: 12.5vw;
+  top: 7.5vh;
+}
+
+.relative {
+  position: relative;
+  height: 85vh;
+  width: 75vw;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #333;
+  background-color: white;
+}
+
+.description button {
+  background-color: #f0c041;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal img {
+  width: 40%;
+}
+
+.description {
+  position: absolute;
+  right: 10px;
+}

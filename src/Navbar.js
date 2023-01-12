@@ -3,12 +3,12 @@ import './Navbar.style.css';
 
 function Navbar(props) {
   return (
-    <div className="row">
+    <div className="row navbar">
       <div>
         <p>Products</p>
       </div>
       <div className="row">
-        <p>Oreder</p>
+        <p>Order</p>
         <select>
           <option>Lowest</option>
           <option>Highest</option>
