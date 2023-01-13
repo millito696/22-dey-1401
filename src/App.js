@@ -34,11 +34,21 @@ function App() {
   const onAddToCartHandler = (cardId) => {
 
     data.map((el) => {
+      let newObj = {};
       if (String(el.id) == cardId) {
-        console.log(cardId);
-        console.log('from if');
-        console.log(el.id);
-        newArray.push(el);
+        newObj = el;
+        // console.log(newObj);
+        if (newArray.includes(el)) {
+          el.count++;
+        } else {
+          newObj.count = 1;
+          newArray.push(newObj)
+        }
+        // console.log(cardId);
+        // console.log('from if');
+        // console.log(el.id);
+
+        // newArray.push(el);
         // console.log(newArray);
         setMyArray(newArray);
         forceUpdate();
@@ -67,9 +77,24 @@ function App() {
   // useEffect(() => {
   //   setMyArray(newArray);
   // }, [myArray])
+  const removeHandlerCart = (cardId) => {
+    console.log(cardId);
+    newArray.map((el, index) => {
+      if (String(el.id) == cardId) {
+        if (el.count > 1) {
+          el.count--;
+        } else {
+          newArray.splice(index, 1);
+        }
+      }
+    })
+    setMyArray(newArray);
+    forceUpdate();
+
+  }
   return (
     <>
-      {console.log('test in app')}
+      {/* {console.log('test in app')} */}
       <Header></Header>
       {/* {console.log(myArray)} */}
       <div className="main">
@@ -89,7 +114,7 @@ function App() {
           />
         </div>
         <div className="cart-main">
-          <Cart array={myArray}></Cart>
+          <Cart array={myArray} removeHandler={removeHandlerCart}></Cart>
         </div>
       </div>
       <Footer></Footer>

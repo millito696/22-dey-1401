@@ -20,7 +20,7 @@ function Cart(props) {
         {/* {console.log(`in Cart ${props.array}`)} */}
       </div>
       {props.array.map((el) => {
-        return <CartItem key={el.id} item={el} />;
+        return <CartItem key={el.id} item={el} onRemove={props.removeHandler} />;
       })}
     </>
   );
