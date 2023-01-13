@@ -1,14 +1,14 @@
 import React from 'react';
 import './Cart.Item.style.css';
 
-function CartItem() {
+function CartItem(props) {
   return (
     <div className="cart-item row">
-      <img src="./img/dress2.jpg"></img>
+      <img src={props.item.img}></img>
       <div>
-        <p>Midi sunsdfsdf</p>
+        <p>{props.item.desc}</p>
         <div className="row">
-          <p>$18.9 x 1</p>
+          <p>${props.item.orice} x 1</p>
           <button>remove</button>
         </div>
       </div>
