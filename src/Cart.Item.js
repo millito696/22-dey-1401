@@ -8,7 +8,7 @@ function CartItem(props) {
       <div>
         <p>{props.item.desc}</p>
         <div className="row">
-          <p>${props.item.orice} x 1</p>
+          <p>${props.item.price} x 1</p>
           <button>remove</button>
         </div>
       </div>

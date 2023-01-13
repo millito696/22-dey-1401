@@ -7,11 +7,13 @@ import Cart from './Cart';
 import Modal from './modal';
 import CartItem from './Cart.Item';
 import Checkout from './Checkout';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { data } from './data';
-let array = [];
+import useForceUpdate from './forceUpdate';
 
+let newArray = [];
 function App() {
+  const forceUpdate = useForceUpdate();
   const [priceSort, setPriceSort] = useState('lowest');
   const [sizeSort, setSizeSort] = useState('all');
   const [productsNumber, setProductsNumber] = useState(6);
@@ -30,12 +32,23 @@ function App() {
     setProductsNumber(number);
   };
   const onAddToCartHandler = (cardId) => {
+
     data.map((el) => {
-      if (String(el.id) === cardId) {
-        array.push(el);
-        setMyArray(array);
+      if (String(el.id) == cardId) {
+        console.log(cardId);
+        console.log('from if');
+        console.log(el.id);
+        newArray.push(el);
+        // console.log(newArray);
+        setMyArray(newArray);
+        forceUpdate();
+        // console.log(myArray);
+        // setMyArray(newArray);
       }
     });
+
+
+
     // if (myArray.length > 0) {
     //   myArray.map((el) => {
     //     if (el.id == NewPerson.id) {
@@ -47,15 +60,18 @@ function App() {
     // } else {
     //   myArray.push(NewPerson);
     // }
-    console.log(myArray);
     // console.log(`In APP ${cardId}`);
     // console.log(cardId)
     // console.log(data.find((el) => String(el.id) === cardId));
   };
-
+  // useEffect(() => {
+  //   setMyArray(newArray);
+  // }, [myArray])
   return (
     <>
+      {console.log('test in app')}
       <Header></Header>
+      {/* {console.log(myArray)} */}
       <div className="main">
         <Navbar
           className="navbar"
@@ -63,6 +79,7 @@ function App() {
           onSizeSortChange={SizeSortHandler}
           products={productsNumber}
         />
+
         <div className="products">
           <CardContainer
             priceSort={priceSort}
