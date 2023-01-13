@@ -6,6 +6,7 @@ import './Card.Container.css';
 let dataSorted = data.sort((a, b) => a.price - b.price);
 
 function CardContainer(props) {
+  // props.onAddToCart()
   props.priceSort === 'lowest' ? dataSorted = data.sort((a, b) => a.price - b.price) : dataSorted = data.sort((a, b) => b.price - a.price);
   switch (props.sizeSort) {
     case 'all':
@@ -43,7 +44,7 @@ function CardContainer(props) {
   return (
     <div className="card-container">
       {dataSorted.map((el) => (
-        <Card key={el.id} data={el} />
+        <Card key={el.id} data={el} onClickAddToCart={props.onAddToCart} />
       ))}
     </div>
   );
