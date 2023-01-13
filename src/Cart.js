@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import './Cart.style.css';
 import CartItem from './Cart.Item';
 import { data } from './data';
+import Checkout from './Checkout';
 
 function Cart(props) {
   // const [newArray, setNewArray] = useState([]);
   // setNewArray(props)
-
+  const [checkOut, setCheckOut] = useState(false);
+  const proceedHandler = () => {
+    setCheckOut(true)
+  }
   return (
     <>
       <div className="cart">
@@ -28,9 +32,11 @@ function Cart(props) {
           total :${props.array.reduce((acc, curr) => acc + curr.price * curr.count, 0).toFixed(2)}
         </div>
         <div>
-          <button className='proceed-btn'>Proceed</button>
+          <button onClick={proceedHandler} className='proceed-btn'>Proceed</button>
         </div>
-      </div></>}
+      </div>
+        {checkOut ? <Checkout /> : ''}
+      </>}
 
     </>
   );
